@@ -6,7 +6,7 @@
      x y←⌈|2÷⍨z-2/zz
      screen←((⍳z)+¨⍨⊂)
      T←0
-     {}{'f'⎕WC'Form'
+     'f'⎕WC'Form'
      'f.b'⎕WC'Bitmap'('CBits'(16 16⍴256⊥255 127 0))
      'f.i'⎕WC'Image'(0 0)('Picture' 'f.b')}⍬
 
