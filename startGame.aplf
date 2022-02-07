@@ -6,16 +6,16 @@
      x y←⌈|2÷⍨z-2/zz
      screen←((⍳z)+¨⍨⊂)
      T←0
-     ⍝'f'⎕WC'Form'
-     ⍝'f.b'⎕WC'Bitmap'('CBits'(16 16⍴256⊥255 127 0))
-     ⍝'f.i'⎕WC'Image'(0 0)('Picture' 'f.b')
+     {}{'f'⎕WC'Form'
+     'f.b'⎕WC'Bitmap'('CBits'(16 16⍴256⊥255 127 0))
+     'f.i'⎕WC'Image'(0 0)('Picture' 'f.b')}⍬
 
      ⍝ area[((⍴stone)screen (⊃⍸area)-⌊2÷⍨⍴stone)]←stone
      ⍝ Maybe done??
 
      ⍝ r←{(sp⊣/⍵),⊂↑¨1↓¨↓(~⍵∊⊣/⍵)/¨⍵}sps
      ⍝ {↑¨1↓¨↓(~⍵∊⊣/⍵)/¨⍵} sps
-     ⍝ (⊣/sps)>¨⊂(?100 100⍴0)
+
      sp←{0∘.{(⊂⍵)>?0×n}⍵} ⍝ Setpiece spawns
      sps←⍎⍤1⊢↑⊃⎕NGET'\Users\brian\Persinal\Scripts\APL\game\Setpieces.txt' 1
 
