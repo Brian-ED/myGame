@@ -3,9 +3,9 @@
      ⍝ Intro:
      ⍝ move with wasd, and exit with e
 
-     ⍝ 'f'⎕WC'Form'
-     ⍝ 'f.i'⎕WC'Image'(0 0)('Picture' 'f.b')
-     ⍝ 'f.b'⎕WC'Bitmap'('CBits'(6⌿6/16 16⍴0))
+     _←⎕NEW'f'⎕WC'Form'
+     _←'f.i'⎕WC'Image'(0 0)('Picture' 'f.b')
+     _←'f.b'⎕WC'Bitmap'('CBits'(6⌿6/16 16⍴0))
 
      ⎕IO←0
      z←16 16 ⍝ camera size
