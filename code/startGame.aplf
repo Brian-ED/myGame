@@ -10,9 +10,9 @@
      screen←((⍳z)+¨⍨⊂)
      T←0
 
-     'f'⎕WC'Form'
-     'f.i'⎕WC'Image'(0 0)('Picture' 'f.b')
-     'f.b'⎕WC'Bitmap'('CBits'(6⌿6/16 16⍴0))
+     ⍝ 'f'⎕WC'Form'
+     ⍝ 'f.i'⎕WC'Image'(0 0)('Picture' 'f.b')
+     ⍝ 'f.b'⎕WC'Bitmap'('CBits'(6⌿6/16 16⍴0))
 
      ⍝ area[((⍴stone)screen (⊃⍸area)-⌊2÷⍨⍴stone)]←stone
      ⍝ Maybe done??
