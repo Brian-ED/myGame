@@ -10,8 +10,10 @@
      screen←((⍳z)+¨⍨⊂)
      T←0
 
-     ⍝ 'f'⎕WC'Form'
-     ⍝ 'f.i'⎕WC'Image'(0 0)('Picture' 'f.b')
+     'f'⎕WC'Form'
+     'f.i'⎕WC'Image'(0 0)('Picture' 'f.b')
+     'f.b'⎕WC'Bitmap'('CBits'(6⌿6/16 16⍴0))
+
      ⍝ area[((⍴stone)screen (⊃⍸area)-⌊2÷⍨⍴stone)]←stone
      ⍝ Maybe done??
 
@@ -27,7 +29,6 @@
          f.b.CBits←16/16⌿{16 16⍴⍵*3}{⊢/[1]n[(⊢/⊃¨⍵);z↑1⊃¨⍵]}screen x,y
 
          {x y+←⍵[1 2]-⍵[0 3] ⋄ T+←⍵[4]}'wsdae'=6↓⍞
-         ⍝ 'f.b'⎕WC'Bitmap'('CBits'(6⌿6/16 16⍴disp))
 
      }⍣{⍵}T
  }
