@@ -3,28 +3,20 @@
      ⍝ Intro:
      ⍝ move with wasd, and exit with e
 
-     _←⎕NEW'f'⎕WC'Form'
+     _←'f'⎕WC'Form'
      _←'f.i'⎕WC'Image'(0 0)('Picture' 'f.b')
      _←'f.b'⎕WC'Bitmap'('CBits'(6⌿6/16 16⍴0))
 
      ⎕IO←0
      z←16 16 ⍝ camera size
-     zz←100  ⍝ world map size
+     zz←100 100  ⍝ world map size
 
-     n←?zz zz⍴256
-     x y←⌈|2÷⍨z-2/zz
-     screen←((⍳z)+¨⍨⊂)
+     n←?zz⍴256
+     x y←⌈|2÷⍨z-zz
+     screen←((⍳z)+¨⍨⊂) ⍝ ⍵ is start (x y)
+     ra←{⍺>¨(?0⍴⍨zz-⍴⍵)}
      T←0
 
-
-     ⍝ area[((⍴stone)screen (⊃⍸area)-⌊2÷⍨⍴stone)]←stone
-     ⍝ Maybe done??
-
-     ⍝ r←{(sp⊣/⍵),⊂↑¨1↓¨↓(~⍵∊⊣/⍵)/¨⍵}sps
-     ⍝ {↑¨1↓¨↓(~⍵∊⊣/⍵)/¨⍵} sps
-     ⍝ (⊣/sps)>¨⊂(?100 100⍴0)
-     sp←{0∘.{(⊂⍵)>?0×n}⍵} ⍝ Setpiece spawns
-     sps←⍎⍤1⊢↑⊃⎕NGET'\Users\brian\Persinal\Scripts\APL\game\Setpieces.txt' 1
 
      {}{   ⍝ Main loop
          ⍞←'move: '

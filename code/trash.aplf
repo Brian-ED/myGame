@@ -1,0 +1,14 @@
+ trash←{
+     ⍝ area←10 10⍴0 ⋄ area[3;3]←1 ⋄ area[7;3]←1 ⋄ area[3;7]←1 ⋄ d←((⎕NEW'Bitmap'(⊂'File' 'images\rock.png')).CBits)⋄ {area[⍵]←d}¨(((⍳3 3)+¨⍨⊂)¨⍸area)⋄area
+     ⍝ Maybe done??
+
+     ⍝ 0.5{((1⍴⍨⊃⍵),1-⊃⍵)⌿((1⍴⍨1⊃⍵),1-1⊃⍵)/⍺>¨?0⍴⍨zz-¯2+⍵}3 3
+     ⍝ ⍺←probability    ⍵←size of array
+
+     ⍝ r←{(sp⊣/⍵),⊂↑¨1↓¨↓(~⍵∊⊣/⍵)/¨⍵}sps
+     ⍝ {↑¨1↓¨↓(~⍵∊⊣/⍵)/¨⍵} sps
+     ⍝ (⊣/sps)>¨⊂(?100 100⍴0)
+     sp←{0∘.{(⊂⍵)>?0×n}⍵} ⍝ Setpiece spawn probablity
+     sps←⍎⍤1⊢↑⊃⎕NGET'\Users\brian\Persinal\Scripts\APL\game\Setpieces.txt' 1
+
+ }
