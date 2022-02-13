@@ -11,19 +11,22 @@
      z←16 16 ⍝ camera size
      zz←100 100  ⍝ world map size
 
-     n←?zz⍴256
+     disp←?zz⍴256
+     map←zz⍴0
      x y←⌈|2÷⍨z-zz
      screen←((⍳z)+¨⍨⊂) ⍝ ⍵ is start (x y)
-     ra←{⍺>¨(?0⍴⍨zz-⍴⍵)}
+     ra←(?zz⍴0)<⊢
      T←0
 
+     map←ra.
 
      {}{   ⍝ Main loop
          ⍞←'move: '
 
-         f.b.CBits←16/16⌿{16 16⍴⍵*3}{⊢/[1]n[(⊢/⊃¨⍵);z↑1⊃¨⍵]}screen x,y
+         f.b.CBits←16/16⌿{16 16⍴⍵*3}{⊢/[1]disp[(⊢/⊃¨⍵);z↑1⊃¨⍵]}screen x,y
 
          {x y+←⍵[1 2]-⍵[0 3] ⋄ T+←⍵[4]}'wsdae'=6↓⍞
 
+         _←⎕dl÷20
      }⍣{⍵}T
  }
