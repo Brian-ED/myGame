@@ -8,6 +8,7 @@
      _←'f.b'⎕WC'Bitmap'('CBits'(6⌿6/16 16⍴0))
 
      ⎕IO←0
+     T←0
      z←16 16 ⍝ camera size
      zz←100 100  ⍝ world map size
 
@@ -15,10 +16,13 @@
      map←zz⍴0
      x y←⌈|2÷⍨z-zz
      screen←((⍳z)+¨⍨⊂) ⍝ ⍵ is start (x y)
-     ra←(?zz⍴0)<⊢
-     T←0
+     ind←((⊂(⍴⊣)|⊢)⊃⊣)
+     ⍝ ⍺←array, ⍵←index. index of, but loops to avoid errors
 
-     map←ra.
+     img←{(⎕NEW'Bitmap'(⊂'File'('images\',⍵))).CBits}
+
+     SP←img¨'rock.png' 'table.png'
+     map←{⍵>?zz⍴0}¨0.01 0.01
 
      {}{   ⍝ Main loop
          ⍞←'move: '
@@ -27,6 +31,6 @@
 
          {x y+←⍵[1 2]-⍵[0 3] ⋄ T+←⍵[4]}'wsdae'=6↓⍞
 
-         _←⎕dl÷20
+         _←⎕DL÷20
      }⍣{⍵}T
  }
