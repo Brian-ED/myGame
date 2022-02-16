@@ -1,13 +1,13 @@
  startGame←{
-
      ⍝ Intro:
      ⍝ move with wasd, and exit with e
-
-     _←'f'⎕WC'Form'
+     ⎕IO←0
+     j←0
+     ctrl←{j⊢←'UC' 'DC' 'RC' 'LC' 'e'⍳⊂2⊃⍵ ⋄ j=0:x+←1 ⋄ j=1:x+←¯1 ⋄ j=2:y+←1 ⋄ j=3:y+←¯1}
+     f←⎕NEW'Form'(⊂'Event'('KeyPress' 'ctrl'))
      _←'f.i'⎕WC'Image'(0 0)('Picture' 'f.b')
      _←'f.b'⎕WC'Bitmap'('CBits'(6⌿6/16 16⍴0))
 
-     ⎕IO←0
      T←0
      z←16 16 ⍝ camera size
      zz←100 100  ⍝ world map size
@@ -24,13 +24,5 @@
      SP←img¨'rock.png' 'table.png'
      map←{⍵>?zz⍴0}¨0.01 0.01
 
-     {}{   ⍝ Main loop
-         ⍞←'move: '
-
-         f.b.CBits←16/16⌿{16 16⍴⍵*3}{⊢/[1]disp[(⊢/⊃¨⍵);z↑1⊃¨⍵]}screen x,y
-
-         {x y+←⍵[1 2]-⍵[0 3] ⋄ T+←⍵[4]}'wsdae'=6↓⍞
-
-         _←⎕DL÷20
-     }⍣{⍵}T
+     {f.b.CBits←16/16⌿{16 16⍴⍵*3}{⊢/[1]disp[(⊢/⊃¨⍵);z↑1⊃¨⍵]}screen x,y ⋄ _←⎕DL÷1}⍣{0}⍬
  }
