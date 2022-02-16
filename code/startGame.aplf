@@ -3,8 +3,7 @@
      ⍝ move with wasd, and exit with e
      ⎕IO←0
      j←0
-     ctrl←{j⊢←'UC' 'DC' 'RC' 'LC' 'e'⍳⊂2⊃⍵ ⋄ j=0:x+←1 ⋄ j=1:x+←¯1 ⋄ j=2:y+←1 ⋄ j=3:y+←¯1}
-     f←⎕NEW'Form'(⊂'Event'('KeyPress' 'ctrl'))
+     f←⎕NEW'Form'(⊂'Event'('KeyPress' '{j⊢←''UC'' ''DC'' ''RC'' ''LC'' ''e''⍳⊂2⊃⍵ ⋄ j=0:x+←1 ⋄ j=1:x+←¯1 ⋄ j=2:y+←1 ⋄ j=3:y+←¯1}'))
      _←'f.i'⎕WC'Image'(0 0)('Picture' 'f.b')
      _←'f.b'⎕WC'Bitmap'('CBits'(6⌿6/16 16⍴0))
 
